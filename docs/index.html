@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAJARDV API - Dokumentasi</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg>
+        PAJARDV <span class="badge">API</span>
+      </a>
+      <nav class="nav">
+        <a href="/">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          HOME
+        </a>
+        <a href="/admin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          ADMIN
+        </a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <div class="docs-hero">
+      <h1>DOKUMENTASI API</h1>
+      <p>Semua endpoint tersedia di bawah ini. Gunakan tester untuk mencoba request real.</p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search-docs" placeholder="Cari endpoint..." autocomplete="off">
+      <div class="category-pills" id="category-pills">
+        <button class="pill active" data-cat="">SEMUA</button>
+      </div>
+      <button id="refresh-docs" class="btn btn-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+        Refresh
+      </button>
+    </div>
+
+    <div class="docs-list" id="docs-list">
+      <div class="empty-state">Memuat endpoint...</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p><strong>PAJARDV API</strong> · POWERED BY <strong>PAJARDV</strong> · 2026 SIMPLE DASHBOARD</p>
+  </footer>
+
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-4a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm9.071-7.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0Zm-16.97 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0ZM21 12a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Z"/></svg>
+  </button>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/docs.js"></script>
+</body>
+</html>
