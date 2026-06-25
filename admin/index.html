@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAJARDV API - Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg>
+        PAJARDV <span class="badge">ADMIN</span>
+      </a>
+      <nav class="nav">
+        <a href="/">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          HOME
+        </a>
+        <a href="/docs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          DOCS
+        </a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <div class="admin-hero">
+      <h1>ADMIN PANEL</h1>
+      <p>Kelola endpoint dan upload scraper JavaScript.</p>
+    </div>
+
+    <div id="login-view" class="container">
+      <div class="login-box">
+        <form id="login-form">
+          <label for="admin-key">ADMIN KEY</label>
+          <input type="password" id="admin-key" placeholder="Masukkan admin key" required>
+          <button class="btn btn-primary" type="submit">LOGIN</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="admin-panel" class="admin-panel hidden">
+      <div class="admin-bar">
+        <h2 style="margin:0;">Dashboard Admin</h2>
+        <button id="logout-btn" class="btn btn-danger btn-sm">Logout</button>
+      </div>
+
+      <div class="admin-grid">
+        <div class="admin-stat">
+          <strong id="stat-total">0</strong>
+          <span>TOTAL ENDPOINTS</span>
+        </div>
+        <div class="admin-stat">
+          <strong id="stat-modules">0</strong>
+          <span>TOTAL MODULES</span>
+        </div>
+        <div class="admin-stat">
+          <strong id="stat-requests">0</strong>
+          <span>TOTAL REQUESTS</span>
+        </div>
+        <div class="admin-stat">
+          <strong id="stat-copies">0</strong>
+          <span>COPY COUNTER</span>
+        </div>
+        <div class="admin-stat">
+          <strong id="stat-visits">0</strong>
+          <span>VISITS</span>
+        </div>
+      </div>
+
+      <div class="upload-card">
+        <h3>UPLOAD SCRAPER</h3>
+        <p style="font-size:0.85rem;color:var(--muted);margin-top:-0.75rem;">File .js akan otomatis menjadi endpoint. Format: <code>module.exports = { meta: {...}, handler: async (req, res) => {...} }</code></p>
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="category-select">Kategori</label>
+              <select id="category-select" name="category" required>
+                <option value="" disabled selected>Pilih kategori</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="endpoint-name">Nama Endpoint</label>
+              <input type="text" id="endpoint-name" name="name" placeholder="cth: youtube" required>
+            </div>
+          </div>
+          <div class="file-drop" id="file-drop">
+            <input type="file" id="file-input" name="scraper" accept=".js" required>
+            <strong id="file-name">Pilih atau drag file .js di sini</strong>
+            <small>Maksimal 10 MB</small>
+          </div>
+          <button class="btn btn-primary" type="submit">UPLOAD & DEPLOY</button>
+        </form>
+      </div>
+
+      <div class="upload-card">
+        <h3>DAFTAR ENDPOINT</h3>
+        <div style="overflow-x:auto;">
+          <table class="endpoint-table">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Kategori</th>
+                <th>Path</th>
+                <th>Req/Copy</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="endpoint-list">
+              <tr><td colspan="5" class="text-center">Memuat...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-4a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm9.071-7.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0Zm-16.97 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0ZM21 12a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Z"/></svg>
+  </button>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
