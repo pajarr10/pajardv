@@ -1,0 +1,29 @@
+{
+  "name": "pajardv-api",
+  "version": "1.0.0",
+  "description": "PAJARDV API - Production ready dashboard, docs, and admin panel with dynamic scraper endpoints",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "api",
+    "scraper",
+    "dashboard",
+    "neo-brutalism"
+  ],
+  "author": "PAJARDV",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "redis": "^4.6.14"
+  }
+}

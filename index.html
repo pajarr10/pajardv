@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAJARDV API - Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg>
+        PAJARDV <span class="badge">API</span>
+      </a>
+      <nav class="nav">
+        <a href="/docs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          DOCS
+        </a>
+        <a href="/admin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          ADMIN
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card hero-card">
+        <span class="simple-mode">SIMPLE MODE</span>
+        <div class="window-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <h1 class="dash-title">DASBOARD</h1>
+        <div class="hero-banner">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;">
+            <defs>
+              <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="180" fill="url(#bg)"/>
+            <circle cx="260" cy="40" r="60" fill="#ffffff" opacity="0.15"/>
+            <circle cx="60" cy="160" r="50" fill="#ffffff" opacity="0.1"/>
+            <path d="M130 55c-15 0-28 8-35 22 18 5 32 20 32 40s-14 35-32 40c7 14 20 22 35 22 23 0 42-19 42-42s-19-42-42-42z" fill="#ffffff" opacity="0.25"/>
+            <rect x="90" y="110" width="140" height="12" rx="6" fill="#ffffff" opacity="0.35"/>
+            <rect x="110" y="130" width="100" height="8" rx="4" fill="#ffffff" opacity="0.25"/>
+            <text x="20" y="165" font-family="monospace" font-size="12" fill="#ffffff" opacity="0.8">PAJARDV_API</text>
+          </svg>
+          <span class="version-badge">V1.0</span>
+        </div>
+        <h2 class="hero-title">PAJARDV <span>API</span></h2>
+        <p class="hero-sub">SIMPLE DASHBOARD</p>
+        <div class="hero-actions">
+          <a href="/docs" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            DOCS
+          </a>
+          <a href="#feedback" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            FEEDBACK
+          </a>
+        </div>
+        <a href="#donate" class="btn btn-soft">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          DONASI / SUPPORT
+        </a>
+      </div>
+    </section>
+
+    <section class="panel" id="menu">
+      <!-- Action bar seperti referensi -->
+      <div class="action-bar" style="max-width:700px;margin:0 auto 1rem;display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;">
+        <a class="btn btn-sm" href="https://saweria.co/pajardv" target="_blank" rel="noopener" style="background:#ff5252;color:#fff;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          DONASI SAWERIA
+        </a>
+        <a class="btn btn-sm" href="#feedback" style="background:#38bdf8;color:#0f172a;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          FEEDBACK / LAPORAN
+        </a>
+        <a class="btn btn-sm" href="/admin" style="background:#facc15;color:#0f172a;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          HUBUNGI OWNER
+        </a>
+      </div>
+
+      <div class="api-card">
+        <div class="api-header">
+          <div class="api-status-title">
+            <div><span class="online-dot"></span><span class="mode-text">PAJARDV_OFFICIAL (VISITOR_MODE)</span></div>
+            <h3>PAJARDV_API</h3>
+          </div>
+          <a class="btn btn-sm" href="/admin">[LOGIN ADMIN]</a>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <strong id="stat-endpoints">0</strong>
+            <span>ENDPOINTS</span>
+          </div>
+          <div class="stat-box">
+            <strong id="stat-modules">0</strong>
+            <span>MODULES</span>
+          </div>
+          <div class="stat-box status-box">
+            <strong id="stat-status">ONLINE</strong>
+            <span>STATUS</span>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <input type="text" id="search-input" placeholder="CARI ENDPOINT..." autocomplete="off">
+          <button id="refresh-btn" class="btn btn-sm">SYNCED</button>
+        </div>
+
+        <div class="ip-row">IP Anda: <span id="user-ip">-</span></div>
+
+        <div class="category-list" id="category-list">
+          <div class="empty-state">Memuat...</div>
+        </div>
+
+        <div class="test-row">
+          <span class="method-badge">GET</span>
+          <div class="test-info">
+            <strong>TEST</strong>
+            <small>Klik untuk membuka panel testing.</small>
+          </div>
+          <a href="/docs#ep-test" class="btn btn-open">OPEN</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="container" style="max-width:700px;">
+      <div class="card" style="margin-top:1rem;">
+        <h3 style="font-family:var(--mono);margin-top:0;">FEEDBACK / LAPORAN</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Kirim laporan atau saran untuk pengembangan PAJARDV API.</p>
+        <form id="feedback-form" class="form-grid" style="grid-template-columns:1fr;">
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label for="fb-name">Nama</label>
+            <input type="text" id="fb-name" required>
+          </div>
+          <div class="form-field" style="margin-bottom:0.75rem;">
+            <label for="fb-message">Pesan</label>
+            <textarea id="fb-message" rows="4" required style="width:100%;padding:0.6rem 0.75rem;border:2px solid var(--border);border-radius:8px;background:var(--bg);font:inherit;"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Kirim Feedback</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="donate" class="container" style="max-width:700px;">
+      <div class="card" style="margin-top:1rem;text-align:center;">
+        <h3 style="font-family:var(--mono);margin-top:0;">DONASI / SUPPORT</h3>
+        <p style="color:var(--muted);font-size:0.9rem;">Dukung PAJARDV API agar tetap online dan berkembang.</p>
+        <a class="btn btn-primary" href="https://saweria.co/pajardv" target="_blank" rel="noopener" style="margin-top:0.5rem;">DONASI VIA SAWERIA</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>PAJARDV API</strong> · POWERED BY <strong>PAJARDV</strong> · 2026 SIMPLE DASHBOARD</p>
+  </footer>
+
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-4a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm9.071-7.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0Zm-16.97 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0ZM21 12a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Z"/></svg>
+  </button>
+
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fb-name').value;
+      const message = document.getElementById('fb-message').value;
+      try {
+        const r = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, message })
+        });
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error || 'Gagal');
+        showToast('Feedback terkirim. Terima kasih!');
+        e.target.reset();
+      } catch (err) {
+        showToast(err.message || 'Gagal mengirim feedback');
+      }
+    });
+  </script>
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
